@@ -55,3 +55,30 @@ CREATE TABLE log_aud (
 );
 
 -----------------------------------------------------------
+
+--Insert 
+--funcionarios
+INSERT INTO funcionarios (NOME, CARGO, DEPARTAMENTO, salario, data_admissao)
+VALUES
+('Ana Souza', 'Analista', 'Financeiro', 4500.00, '2019-03-10'),
+('Bruno Lima', 'Assistente', 'RH', 3200.00, '2020-01-15'),
+('Carlos Mendes', 'Coordenador', 'TI', 6800.00, '2018-07-01'),
+('Daniela Rocha', 'Analista', 'TI', 5200.00, '2021-02-20'),
+('Eduardo Silva', 'Gerente', 'Financeiro', 9800.00, '2017-05-05'),
+('Fernanda Alves', 'Assistente', 'Compras', 3100.00, '2022-04-11'),
+('Gustavo Nunes', 'Analista', 'Compras', 4800.00, '2019-09-09'),
+('Helena Costa', 'Supervisor', 'RH', 6200.00, '2018-11-30'),
+('Igor Martins', 'Analista', 'TI', 5500.00, '2020-06-18'),
+('Juliana Pires', 'Assistente', 'Financeiro', 3300.00, '2021-08-02'),
+('Kleber Santos', 'Analista', 'RH', 4700.00, '2019-10-14'),
+('Larissa Teixeira', 'Coordenador', 'Compras', 6900.00, '2017-03-27'),
+('Marcos Araujo', 'Analista', 'TI', 5100.00, '2022-01-10'),
+('Natalia Farias', 'Assistente', 'RH', 3000.00, '2023-02-01'),
+('Otavio Ribeiro', 'Supervisor', 'Financeiro', 7300.00, '2018-06-06'),
+('Paula Guedes', 'Analista', 'Compras', 4600.00, '2020-09-21'),
+('Rafael Moraes', 'Gerente', 'TI', 10200.00, '2016-12-12'),
+('Simone Barros', 'Assistente', 'Financeiro', 3400.00, '2021-04-19'),
+('Tiago Lopes', 'Analista', 'RH', 4900.00, '2019-01-07'),
+('Vanessa Cruz', 'Coordenador', 'Financeiro', 7100.00, '2017-08-23');
+
+

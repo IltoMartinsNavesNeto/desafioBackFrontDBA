@@ -159,3 +159,19 @@ VALUES
 (460.00, 13, 13),
 (490.00, 17, 17),
 (215.00, 18, 18);
+
+--Insert log auditoria
+INSERT INTO log_aud (descr_log, data_registro)
+VALUES
+('Cadastro de funcionário realizado', '2024-01-10'),
+('Solicitação de auxílio criada', '2024-01-12'),
+('Pagamento efetuado', '2024-01-15'),
+('Atualização de status da solicitação', '2024-01-18'),
+('Cancelamento de solicitação', '2024-01-20'),
+('Novo funcionário admitido', '2024-02-01'),
+('Auxílio finalizado', '2024-02-05'),
+('Pagamento aprovado', '2024-02-10'),
+('Erro de validação corrigido', '2024-02-15'),
+('Relatório gerado', '2024-03-01');
+
+

@@ -1,5 +1,6 @@
 # DBA
 
+# funcionarios
 CREATE TABLE funcionarios (
     MATRICULA INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     NOME VARCHAR(100) NOT NULL,
@@ -10,5 +11,18 @@ CREATE TABLE funcionarios (
     data_demissao DATE,
     CONSTRAINT chk_datas
         CHECK (data_demissao IS NULL OR data_demissao >= data_admissao)
+);
+
+# Solicitações de auxílio
+CREATE TABLE SOL_AUX (
+	ID_AUX INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	DESCRICAO VARCHAR(100) NOT NULL,
+	DATA_REGISTRO DATE NOT NULL DEFAULT CURRENT_DATE, 
+	VALOR_AUX NUMERIC(11,2) NOT NULL CHECK (VALOR_AUX > 0),	
+	MATRICULA INTEGER NOT NULL,
+
+    CONSTRAINT fk_matricula
+        FOREIGN KEY (matricula)
+        REFERENCES funcionarios (matricula)
 );
 

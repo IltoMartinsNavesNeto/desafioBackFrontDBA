@@ -82,3 +82,32 @@ VALUES
 ('Vanessa Cruz', 'Coordenador', 'Financeiro', 7100.00, '2017-08-23');
 
 
+--Insert SOL_AUX
+INSERT INTO SOL_AUX (DESCRICAO, DATA_REGISTRO, VALOR_AUX, MATRICULA, STATUS)
+VALUES
+('Auxílio alimentação', '2024-01-10', 450.00, 1, 'FINALIZADO'),
+('Auxílio transporte', '2024-01-12', 220.00, 2, 'FINALIZADO'),
+('Auxílio saúde', '2024-01-15', 800.00, 3, 'EM_ANDAMENTO'),
+('Auxílio educação', '2024-01-18', 1200.00, 4, 'PENDENTE'),
+('Auxílio alimentação', '2024-01-20', 500.00, 5, 'FINALIZADO'),
+('Auxílio transporte', '2024-01-22', 210.00, 6, 'FINALIZADO'),
+('Auxílio saúde', '2024-01-25', 900.00, 7, 'EM_ANDAMENTO'),
+('Auxílio educação', '2024-02-01', 1500.00, 8, 'PENDENTE'),
+('Auxílio alimentação', '2024-02-05', 480.00, 9, 'FINALIZADO'),
+('Auxílio transporte', '2024-02-07', 230.00, 10, 'FINALIZADO'),
+('Auxílio saúde', '2024-02-10', 850.00, 11, 'EM_ANDAMENTO'),
+('Auxílio educação', '2024-02-12', 1400.00, 12, 'PENDENTE'),
+('Auxílio alimentação', '2024-02-15', 460.00, 13, 'FINALIZADO'),
+('Auxílio transporte', '2024-02-18', 240.00, 14, 'FINALIZADO'),
+('Auxílio saúde', '2024-02-20', 920.00, 15, 'EM_ANDAMENTO'),
+('Auxílio educação', '2024-02-22', 1600.00, 16, 'PENDENTE'),
+('Auxílio alimentação', '2024-03-01', 490.00, 17, 'FINALIZADO'),
+('Auxílio transporte', '2024-03-03', 215.00, 18, 'FINALIZADO'),
+('Auxílio saúde', '2024-03-05', 870.00, 19, 'EM_ANDAMENTO'),
+('Auxílio educação', '2024-03-07', 1300.00, 20, 'PENDENTE'),
+('Auxílio alimentação', '2024-03-10', 470.00, 1, 'FINALIZADO'),
+('Auxílio transporte', '2024-03-12', 225.00, 2, 'FINALIZADO'),
+('Auxílio saúde', '2024-03-15', 910.00, 3, 'EM_ANDAMENTO'),
+('Auxílio educação', '2024-03-18', 1550.00, 4, 'PENDENTE'),
+('Auxílio alimentação', '2024-03-20', 500.00, 5, 'FINALIZADO');
+

@@ -1,5 +1,6 @@
 -- DBA
 
+-- Create Table
 -- funcionarios
 CREATE TABLE funcionarios (
     MATRICULA INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -26,6 +27,12 @@ CREATE TABLE SOL_AUX (
         REFERENCES funcionarios (matricula)
 );
 
+ALTER TABLE SOL_AUX
+ADD COLUMN STATUS VARCHAR(20) NOT NULL DEFAULT 'PENDENTE',
+ADD CONSTRAINT chk_status_sol_aux
+CHECK (STATUS IN ('PENDENTE', 'EM_ANDAMENTO', 'FINALIZADO', 'CANCELADO'));
+
+
 -- Pagamentos
 CREATE TABLE PAGAMENTOS (
 	ID_PAG INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -46,3 +53,5 @@ CREATE TABLE log_aud (
     descr_log VARCHAR(100) NOT NULL,
     data_registro DATE NOT NULL DEFAULT CURRENT_DATE
 );
+
+-----------------------------------------------------------

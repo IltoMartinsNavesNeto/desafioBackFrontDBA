@@ -1,6 +1,6 @@
-# DBA
+-- DBA
 
-# funcionarios
+-- funcionarios
 CREATE TABLE funcionarios (
     MATRICULA INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     NOME VARCHAR(100) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE funcionarios (
         CHECK (data_demissao IS NULL OR data_demissao >= data_admissao)
 );
 
-# Solicitações de auxílio
+-- Solicitações de auxílio
 CREATE TABLE SOL_AUX (
 	ID_AUX INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	DESCRICAO VARCHAR(100) NOT NULL,
@@ -26,3 +26,16 @@ CREATE TABLE SOL_AUX (
         REFERENCES funcionarios (matricula)
 );
 
+-- Pagamentos
+CREATE TABLE PAGAMENTOS (
+	ID_PAG INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	VALOR_PAG NUMERIC(11,2) NOT NULL CHECK (VALOR_PAG > 0),
+	ID_AUX INTEGER,
+	MATRICULA INTEGER NOT NULL,
+	CONSTRAINT FK_MATRICULA
+        FOREIGN KEY (matricula)
+        REFERENCES funcionarios (matricula),
+	CONSTRAINT FK_SOL_AUX
+        FOREIGN KEY (ID_AUX)
+        REFERENCES SOL_AUX (ID_AUX)
+);

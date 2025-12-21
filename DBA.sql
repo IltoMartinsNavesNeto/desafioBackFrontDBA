@@ -198,3 +198,31 @@ HAVING
 	COUNT(*) > 5
 ORDER BY
 	ANO_MES ASC
+
+-------------------------------------------------------------------
+
+--TRIGGER
+CREATE OR REPLACE FUNCTION TRG_INS_PAGAMENTO()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
+BEGIN
+    UPDATE SOL_AUX
+    SET STATUS = 'PAGO'
+    WHERE ID_AUX = NEW.ID_AUX;
+
+    INSERT INTO LOG_AUD (
+        DESCR_LOG,
+        DATA_REGISTRO
+    )
+    VALUES (
+        'PAGAMENTO REALIZADO PARA A SOLICITAÇÃO ID ' || NEW.ID_AUX,
+        CURRENT_DATE
+    );
+
+    RETURN NEW;
+END;
+$$;
+
+
+

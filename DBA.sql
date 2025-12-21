@@ -136,30 +136,6 @@ VALUES
 (215.00, 18, 18);
 
 
---Insert Pagamentos 
-INSERT INTO PAGAMENTOS (VALOR_PAG, ID_AUX, MATRICULA)
-VALUES
-(450.00, 1, 1),
-(220.00, 2, 2),
-(500.00, 5, 5),
-(210.00, 6, 6),
-(480.00, 9, 9),
-(230.00, 10, 10),
-(460.00, 13, 13),
-(240.00, 14, 14),
-(490.00, 17, 17),
-(215.00, 18, 18),
-(470.00, 21, 1),
-(225.00, 22, 2),
-(500.00, 25, 5),
-(450.00, 1, 1),
-(220.00, 2, 2),
-(480.00, 9, 9),
-(230.00, 10, 10),
-(460.00, 13, 13),
-(490.00, 17, 17),
-(215.00, 18, 18);
-
 --Insert log auditoria
 INSERT INTO log_aud (descr_log, data_registro)
 VALUES
@@ -174,4 +150,31 @@ VALUES
 ('Erro de validação corrigido', '2024-02-15'),
 ('Relatório gerado', '2024-03-01');
 
+---------------------------------------------------------------
+
+-- QUESTÃO 1 - JOIN e ORDER BY 
+
+SELECT 
+	FUN.NOME,
+	FUN.MATRICULA,
+	FUN.DEPARTAMENTO,
+	SOL.VALOR_AUX,
+	SOL.STATUS,
+	SOL.DATA_REGISTRO
+FROM 
+	FUNCIONARIOS FUN 
+JOIN 
+	SOL_AUX SOL 
+ON 
+	SOL.MATRICULA = FUN.MATRICULA
+JOIN 
+	PAGAMENTOS PAG 
+ON 
+	(PAG.MATRICULA = FUN.MATRICULA AND PAG.ID_AUX = SOL.ID_AUX)
+WHERE 
+	STATUS = 'FINALIZADO'
+AND 
+	SOL.DATA_REGISTRO >= CURRENT_DATE - INTERVAL '6 months'
+ORDER BY 
+	FUN.DEPARTAMENTO ASC 
 

@@ -323,3 +323,30 @@ ORDER BY
 	
 ---------------------------------------------------------------------------
 
+-- Teste da Procedure (PostgreSQL usa SELECT em vez de CALL)
+CALL SP_CANCELAR_SOLICITACAO(
+    1,
+    'CLIENTE DESISTIU DA COMPRA',
+    NULL
+);
+
+-- Verificar trigger (inserir novo pagamento)
+
+INSERT INTO SOL_AUX (DESCRICAO, MATRICULA, VALOR_AUX, STATUS)
+VALUES (
+    'SERVIÇO DE TI',
+    1,
+    3000.00,
+    'FINALIZADO'
+);
+
+INSERT INTO PAGAMENTOS (
+    VALOR_PAG,
+    ID_AUX,
+    MATRICULA
+)
+VALUES (
+    2500.00,
+    1,
+    1
+);

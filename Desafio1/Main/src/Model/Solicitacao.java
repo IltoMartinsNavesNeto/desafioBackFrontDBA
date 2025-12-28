@@ -1,17 +1,17 @@
 package Model;
 
-import java.awt.*;
+import java.util.List;
 
 public class Solicitacao {
 
     private Integer id;
     private String descricao;
     private Double valorSolicitacao;
-    private List motivo;
-    private List statusSolicitacao;
+    private List<String> motivo;
+    private List<String> statusSolicitacao;
     private Colaborador colaborador;
 
-    public Solicitacao(Integer id, String descricao, Double valorSolicitacao, List motivo, List statusSolicitacao, Colaborador colaborador) {
+    public Solicitacao(Integer id, String descricao, Double valorSolicitacao, List<String> motivo, List<String> statusSolicitacao, Colaborador colaborador) {
         this.id = id;
         this.descricao = descricao;
         this.valorSolicitacao = valorSolicitacao;
@@ -66,5 +66,17 @@ public class Solicitacao {
 
     public void setColaborador(Colaborador colaborador) {
         this.colaborador = colaborador;
+    }
+
+    @Override
+    public String toString() {
+        return "Solicitacao{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", valorSolicitacao=" + valorSolicitacao +
+                ", motivo=" + motivo +
+                ", statusSolicitacao=" + statusSolicitacao +
+                ", colaborador=" + colaborador +
+                '}';
     }
 }
